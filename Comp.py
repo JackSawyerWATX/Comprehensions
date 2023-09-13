@@ -1,19 +1,32 @@
 from datetime import datetime
 
-x = int(input('First Parameter: '))
-y = int(input('Second Parameter: '))
-z = int(input('Third Parameter: '))
-n = int(input('Fourth Parameter: '))
+start_time = datetime.now()
 
-coord = [[i, j, k] 
+u = int(input('First Parameter: '))
+v = int(input('Second Parameter: '))
+w = int(input('Third Parameter: '))
+x = int(input('Fourth Parameter: '))
+y = int(input('Fifth Parameter: '))
+z = int(input('Sixth Parameter: '))
+n = int(input('LAST Parameter: '))
+
+coord = [[f, g, h, i, j, k] 
+         for f in range(x + 1)
+         for g in range(x + 1)
+         for h in range(x + 1)
          for i in range(x + 1) 
          for j in range(y + 1) 
          for k in range(z + 1) 
-         if i + j + k != n]
+         if f + g + h + i + j + k != n]
 
 now = datetime.now()
 
-print(coord)
+print(*coord, sep='\n')
+
+print()
 
 current_time = now.strftime("%H:%M:%S")
-print("Current Time =", current_time)
+print("- Current Time =", current_time)
+print()
+end_time = datetime.now()
+print('-- Duration: {}'.format(end_time - start_time))
