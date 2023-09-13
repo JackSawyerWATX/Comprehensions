@@ -27,6 +27,6 @@ print()
 
 current_time = now.strftime("%H:%M:%S")
 print("- Current Time =", current_time)
-print()
+# print()
 end_time = datetime.now()
 print('-- Duration: {}'.format(end_time - start_time))
